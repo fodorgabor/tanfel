@@ -65,13 +65,11 @@ else:
     print("Nem csoportbontásban tanulják.")
 
 def megszamolas(tanarok):
-    lista=[]
-    for elem in tanarok:
-        if elem in lista:
-            None
-        else:
-            lista.append(elem)
-    return len(lista)
+    tanarokEgyedi=[]
+    for tanar in tanarok:
+        if tanar  not in tanarokEgyedi:
+            tanarokEgyedi.append(tanar)
+    return len(tanarokEgyedi)
 
 print("7. feladat")
 print(f"Az iskolában {megszamolas(tanarok)} tanár tanít.")
