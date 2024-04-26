@@ -64,12 +64,22 @@ if eldontes(beOsztaly,beTantargy,tantargyak,osztalyok):
 else:
     print("Nem csoportbontásban tanulják.")
 
-def megszamolas(tanarok):
+def halmaz(tanarok):
     tanarokEgyedi=[]
     for tanar in tanarok:
         if tanar  not in tanarokEgyedi:
             tanarokEgyedi.append(tanar)
-    return len(tanarokEgyedi)
+    
+    return tanarokEgyedi
+
+tanarokEgyedi=halmaz(tanarok)
 
 print("7. feladat")
-print(f"Az iskolában {megszamolas(tanarok)} tanár tanít.")
+print(f"Az iskolában {len(tanarokEgyedi)} tanár tanít.")
+
+
+#+feladat irassuk ki a neveket egy tanarok.txt allományba.
+
+with open("tanarok.txt","w",encoding="UTF-8") as fout:
+    for tanar in tanarokEgyedi:
+        print(tanar, file=fout)
